@@ -1,0 +1,148 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin images {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+@mixin banner {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@mixin restaurants {
+    position: relative;
+    padding-left: 10px;
+    height: 75px;
+    line-height: 2rem;
+    
+    &--title{
+        margin: 0px;
+    }
+
+    &--description{
+        margin: 0px;
+    }
+
+    &--heart{
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+}
+
+@mixin menu {
+    &__title{
+        text-transform: uppercase;
+        font-weight: 300;
+        border-bottom: 3px solid $color-tertiary;
+        max-width: 60px; 
+    }
+
+    &__menu{
+        display: flex;
+        background-color: $color-white;
+        box-shadow: 0px 5px 10px 0px #c6c6c6;
+        border-radius: 20px;
+        padding-left: 20px;
+        margin-top: 20px;
+        height: 75px;
+        overflow: hidden;
+        cursor: pointer;
+    
+
+        @media (min-width:1270px) {
+            width: 400px;
+        }  
+
+        &:nth-child(1n){
+            animation: progress 1s ease-in;
+        }
+        &:nth-child(2n){
+            animation: progress 2s ease-in;
+        }
+        &:nth-child(3n){
+            animation: progress 3s ease-in;
+        }
+
+        &:hover > .meal__menu--checkbox {
+            animation: checkmark 500ms ease-in-out forwards;
+            
+        } 
+
+        &:hover .checkmark {
+            transform: rotate(0deg);
+        }                
+
+        &--description{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            *{
+                margin: 0%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .description{
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+        }
+
+        &--price{
+            font-weight: bold;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+        }
+
+        &--checkbox{
+            @include center;
+            overflow: hidden;
+            color: $color-white;
+            background-color: $color-tertiary;
+            border-radius: 0px 20px 20px 0px;
+            width: 0%;
+
+            .checkmark{
+                font-size: 1.5rem;
+                transform: rotate(180deg);
+                transition-duration: 0.8s;
+            }
+        }
+    }
+}
+
+@mixin button {
+    color: $color-white;
+    outline-style: none;
+    border: none;
+    cursor: pointer;
+
+    border-radius: 5rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(334deg, $color-primary, $color-secondary);
+    box-shadow: 0px 5px 10px 0px $box-color;
+    
+    &:hover {
+        background-color: white;
+        box-shadow: 5px 10px 10px 0px #c6c6c6;
+    }
+}
