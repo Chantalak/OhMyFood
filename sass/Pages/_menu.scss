@@ -1,0 +1,78 @@
+.header{
+    height: 70px;
+
+    &__link{
+        position: absolute;
+        left: 20px;
+    }
+}
+
+.banner__image{
+    margin-bottom: 250px;
+    &--photo{
+        position: absolute;
+        z-index: -1;
+        @include banner;
+    }
+}
+
+.menu{
+    background-color: $background-color;
+    border-radius: 50px 50px 0px 0px;
+
+    .head{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        border-radius: 20px;
+        z-index: 1;
+
+        @media (min-width:599px){
+            width: 400px;
+        }
+
+        &__title{
+            font-family: 'Shrikhand', sans-serif;
+            margin-left: 30px;
+        }
+
+        i{
+           font-size: 1.5rem;
+        }
+    }
+ 
+    .container{
+        @media (max-width:590px) {
+            padding: 10px;
+        }
+
+        @media (min-width:599px) and (max-width:1270px){
+            padding: 0% 10% 0% 10%;
+        }
+
+        @media (min-width:1270px) {
+            display: flex;
+            justify-content: space-evenly;
+        }   
+
+        .meal{
+            @media (max-width:1270px){
+                margin-bottom: 10%;
+            }
+            @include menu;
+        }
+    }
+}
+
+.order{
+    @include center;
+    padding: 50px 0px 70px 0px;
+    @media (max-width: 992px) {
+        padding: 0px 0px 70px 0px;
+    }
+
+    &__btn{
+        @include button;
+    }
+}

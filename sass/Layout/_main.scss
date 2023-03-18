@@ -1,0 +1,55 @@
+.location{
+    @include center;
+    background-color: $background-clr;
+    box-shadow: inset 1px 3px 10px 1px $box-color;
+
+    &__text{
+        font-weight: bold;
+        padding-left: 10px;
+    }
+}
+
+.loading{
+    position: fixed;
+    @include center;
+    width: 100%;
+    height: 100%;
+    background-color: $color-secondary;
+    animation: loading 0.05s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    z-index: 10000;
+    
+  &__spinner{
+    font-size: 8rem;
+    color: $color-primary;
+    animation: spinner 1s ease 3;
+    }
+}
+
+.heading{
+    @include center;
+    flex-direction: column;
+    height: 300px;
+    background-color: $background-color;
+
+    @media (min-width:599px){
+        height: 230px;
+    }
+
+    &__title{
+        margin: 0%;
+    }
+
+    &__text{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    &__btn{
+       @include button;
+    }
+}
+
+
