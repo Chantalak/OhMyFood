@@ -20,7 +20,7 @@ Intégrer puis dynamiser une page web avec des animations CSS en utilisant le pr
 # Cahier des charges
 * Intégration doit se faire en HTML / CSS / Sass sans framework
 
-##Animations:
+## Animations:
 
 ### Boutons
 * Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. L’ombre portée devra également être plus visible.
